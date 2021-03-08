@@ -13,6 +13,32 @@ public class Libretto {
 	public void add(Voto v) {
 		this.voti.add(v);
 	}
+	/*
+	public void stampaVotiUguali(int punteggio) {
+		
+	}
+	
+	public String votiUguali(int punteggio) {
+		
+	}
+	*/
+	public List<Voto> listaVotiUguali(int punteggio) {
+		List<Voto> risultato = new ArrayList<>();
+		for(Voto v:this.voti) {
+			if (v.getVoto()==punteggio)
+				risultato.add(v);
+		}
+		return risultato;
+	}
+	
+	public Libretto votiUguali(int punteggio) {
+		Libretto risultato = new Libretto();
+		for(Voto v:this.voti) {
+			if(v.getVoto()==punteggio)
+				risultato.add(v);
+		}
+		return risultato;
+	}
 	
 	public String toString() {
 		String s = "";
